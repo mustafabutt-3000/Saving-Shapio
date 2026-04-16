@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 1111528822}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &6446866
 BoxCollider:
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 617490006}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &507237920
 BoxCollider:
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 861975207}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &562443132
 BoxCollider:
@@ -749,6 +749,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 617490008}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 617490009}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &617490006 stripped
 Transform:
@@ -772,6 +775,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &617490009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617490007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1 &671942723
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 769484401}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &671942725
 BoxCollider:
@@ -859,19 +876,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 569.13214
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.9
+      value: 61.168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.027218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -916,6 +933,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 769484403}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769484404}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &769484401 stripped
 Transform:
@@ -939,6 +959,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &769484404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769484402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,19 +1040,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 546.6704
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 78.06
+      value: 75.598
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.027218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1063,6 +1097,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 835231452}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835231453}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &835231450 stripped
 Transform:
@@ -1086,6 +1123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &835231453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835231451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1001 &845536022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1104,19 +1155,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 579.94275
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.54
+      value: 2.6777
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.02722
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1161,6 +1212,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 845536025}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 845536026}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &845536023 stripped
 Transform:
@@ -1184,6 +1238,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &845536026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845536024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1001 &861975206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1202,19 +1270,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 599.6012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.7
+      value: 16.601
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.02722
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1259,6 +1327,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 861975209}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 861975210}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &861975207 stripped
 Transform:
@@ -1282,6 +1353,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &861975210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861975208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1 &876261339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 1486228293}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &1017711164
 BoxCollider:
@@ -1472,7 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 845536023}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &1045342405
 BoxCollider:
@@ -1574,19 +1659,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 595.0468
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.431
+      value: 46.387
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.027218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1631,6 +1716,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1111528824}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1111528825}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &1111528822 stripped
 Transform:
@@ -1654,6 +1742,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &1111528825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111528823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!1 &1170189161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1046528821980410539, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
@@ -1664,6 +1766,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8095952989717577005, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
   m_PrefabInstance: {fileID: 5900565695329252634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1170189166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170189161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2715cc6cccfc23e4890b7264f2de9f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillEffect
+  cutCubePrefab: {fileID: 5204064098284406498, guid: a3f30c7c4aa5e0a4793c5ecf07e04eb7, type: 3}
+  CrushedCubePrefab: {fileID: 919132149155446097, guid: f3a2f058d5be7644e986fc5303e470d8, type: 3}
+  separationForce: 10
+  separationRadius: 2
+  restartDelay: 1.5
 --- !u!1 &1179275087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 835231450}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &1179275089
 BoxCollider:
@@ -1931,19 +2050,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 615.8958
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.271
+      value: 31.976
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.02722
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1988,6 +2107,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1486228295}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486228296}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &1486228293 stripped
 Transform:
@@ -2011,6 +2133,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &1486228296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486228294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
+--- !u!1 &1618686018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618686020}
+  - component: {fileID: 1618686019}
+  - component: {fileID: 1618686021}
+  m_Layer: 0
+  m_Name: PositionFixer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1618686019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618686018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1618686020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618686018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 111.56, y: -14.31, z: 0}
+  m_LocalScale: {x: 6.4003067, y: 0.44389, z: 5.6985}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618686021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618686018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dff6ed047ff1dd4bab16aeffc58ba04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RePosition
 --- !u!1 &1619399178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,7 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTrap1Bottom
   blade: {fileID: 2020875174}
-  rotationTime: 0.2
+  rotationTime: 0.4
   targetX: -210
 --- !u!65 &1749465205
 BoxCollider:
@@ -2293,19 +2495,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 341.8827
+      value: 635.6283
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.020996
+      value: 89.489
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -18.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027217
+      value: 0.027218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2350,6 +2552,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2020875176}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2020875177}
   m_SourcePrefab: {fileID: 100100000, guid: 8249c24950c38954f872d1fc89a5ff91, type: 3}
 --- !u!4 &2020875174 stripped
 Transform:
@@ -2373,6 +2578,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c77eae5193c7304daedda4929128452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BladeCollision
+--- !u!114 &2020875177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020875175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d1b316bdd7d8448d7e9abdbb46f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillCube
+  playerTag: Player
+  onlyOnce: 1
 --- !u!33 &52099204789785762
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5041,7 +5260,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1046528821980410539, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1170189166}
   m_SourcePrefab: {fileID: 100100000, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
 --- !u!1 &5923414571162137539
 GameObject:
@@ -6228,3 +6450,4 @@ SceneRoots:
   - {fileID: 1179275090}
   - {fileID: 507237921}
   - {fileID: 1619399182}
+  - {fileID: 1618686020}
