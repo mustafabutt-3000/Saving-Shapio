@@ -139,9 +139,6 @@ public class ProjectileController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
-            if (health != null)
-                health.TakeDamage();
 
             Destroy(gameObject);
         }

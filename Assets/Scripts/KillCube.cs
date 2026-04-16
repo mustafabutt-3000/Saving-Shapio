@@ -30,12 +30,8 @@ public class KillCube : MonoBehaviour
         if (target.TryGetComponent<KillEffect>(out var killEffect))
         {
             Debug.Log($"[KillCube] Blade hit '{target.name}' — calling TriggerKill().");
-            if(gameObject.name.StartsWith("trap 1 bottom") || gameObject.name.StartsWith("trap 1 top"))
+            if(gameObject.name.StartsWith("trap 1"))
                 killEffect.TriggerKill1Vertical();
-            else if(gameObject.name.StartsWith("trap 1 side bottom") || gameObject.name.StartsWith("trap 1 side top"))
-                killEffect.TriggerKill1Horizontal();
-            else if (gameObject.name.StartsWith("HoleCrusherTrap"))
-                killEffect.TriggerCrush();
             hasTriggered = true;
         }
         else

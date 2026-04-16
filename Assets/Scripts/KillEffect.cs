@@ -1,13 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class KillEffect : MonoBehaviour
 {
     [Header("Split Cube Prefab")]
-    public GameObject cutCubePrefab; // assign your split version in Inspector
+    public GameObject cutCubePrefab;
     public GameObject CrushedCubePrefab;
+
     [Header("Separation Force Settings")]
-    public float separationForce = 2f; // tweak in inspector
-    public float separationRadius = 0.5f; // how wide the push spreads
+    public float separationForce = 2f;
+    public float separationRadius = 0.5f;
+
+    [Header("Restart Settings")]
+    public float restartDelay = 3.0f;
 
     private JumpScript jumpScript;
 
@@ -18,28 +24,23 @@ public class KillEffect : MonoBehaviour
 
     public void TriggerKill1Vertical()
     {
+        Debug.Log("Triggering vertical kill");
         SpawnAndPush(Quaternion.Euler(transform.rotation.x, 90f, transform.rotation.z));
     }
 
-    public void TriggerKill1Horizontal()
-    {
-        SpawnAndPush(Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90f));
-    }
     public void TriggerCrush()
     {
-        // Spawn crushed cube
+        Debug.Log("Triggering crush kill");
         GameObject crushedCube = Instantiate(CrushedCubePrefab, transform.position, transform.rotation);
         crushedCube.transform.localScale = transform.localScale;
-        // Destroy the original cube
-        Destroy(gameObject);
+        InitiateRestart();
     }
+
     private void SpawnAndPush(Quaternion rot)
     {
-        // Spawn cut cube
         GameObject cutCube = Instantiate(cutCubePrefab, transform.position, rot);
         cutCube.transform.localScale = transform.localScale;
 
-        // Only apply force if grounded
         if (jumpScript != null && jumpScript.IsGrounded)
         {
             Rigidbody[] rbs = cutCube.GetComponentsInChildren<Rigidbody>();
@@ -49,7 +50,41 @@ public class KillEffect : MonoBehaviour
             }
         }
 
-        // Destroy the original cube
+        InitiateRestart();
+    }
+
+    private void InitiateRestart()
+    {
+        if (PlayerHealth.Instance != null)
+            PlayerHealth.Instance.OnPlayerKilled();
+
+        if (PlayerHealth.Instance == null || !IsGameOver())
+        {
+            GameObject loader = new GameObject("RestartTimer");
+            loader.AddComponent<RestartHelper>().BeginTimer(restartDelay);
+        }
+
         Destroy(gameObject);
+    }
+
+    private bool IsGameOver()
+    {
+        //  Updated for new material system
+        return PlayerHealth.Instance != null &&
+               PlayerHealth.Instance.IsGameOver();
+    }
+}
+
+public class RestartHelper : MonoBehaviour
+{
+    public void BeginTimer(float delay)
+    {
+        StartCoroutine(RestartRoutine(delay));
+    }
+
+    private IEnumerator RestartRoutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

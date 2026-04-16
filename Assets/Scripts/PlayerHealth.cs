@@ -1,41 +1,118 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHits = 3;
-    private int currentHits = 0;
-    private bool isInvincible = false;
+    public static PlayerHealth Instance { get; private set; }
 
-    public float invincibilityDuration = 1.5f;
+    [Header("Reference Materials (6 → 1 intensity)")]
+    [Tooltip("Assign 6 materials from highest (index 0) to lowest intensity (index 5)")]
+    public List<Material> healthMaterials = new List<Material>();
 
-    public void TakeDamage()
+    [Header("Target Material (the one used in scene)")]
+    [Tooltip("Material that actually gets modified at runtime")]
+    public Material targetMaterial;
+
+    [Header("Game Over")]
+    public GameObject gameOverCanvasPrefab;
+    public string firstLevelSceneName = "Level-1";
+
+    private int currentIndex = 0;
+    private GameObject gameOverInstance;
+    private bool isGameOver = false;
+
+    private List<Color> emissionLevels = new List<Color>();
+
+    void Awake()
     {
-        if (isInvincible) return;
-
-        currentHits++;
-        Debug.Log("Player hit! Hits taken: " + currentHits);
-
-        if (currentHits >= maxHits)
+        if (Instance != null && Instance != this)
         {
-            Die();
+            Destroy(gameObject);
+            return;
         }
-        else
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        CacheEmissionLevels();
+        ApplyEmission();
+    }
+
+    void Update()
+    {
+        if (isGameOver && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            StartCoroutine(InvincibilityWindow());
+            RestartFromFirstLevel();
         }
     }
 
-    IEnumerator InvincibilityWindow()
+    public void OnPlayerKilled()
     {
-        isInvincible = true;
-        yield return new WaitForSeconds(invincibilityDuration);
-        isInvincible = false;
+        if (isGameOver) return;
+
+        currentIndex++;
+
+        if (currentIndex >= emissionLevels.Count)
+        {
+            TriggerGameOver();
+            return;
+        }
+
+        ApplyEmission();
     }
 
-    void Die()
+    void CacheEmissionLevels()
     {
-        Debug.Log("Player is dead!");
-        Destroy(gameObject);
+        emissionLevels.Clear();
+
+        foreach (var mat in healthMaterials)
+        {
+            if (mat != null && mat.HasProperty("_EmissionColor"))
+            {
+                emissionLevels.Add(mat.GetColor("_EmissionColor"));
+            }
+        }
+    }
+
+    void ApplyEmission()
+    {
+        if (targetMaterial == null || emissionLevels.Count == 0) return;
+
+        targetMaterial.EnableKeyword("_EMISSION");
+        targetMaterial.SetColor("_EmissionColor", emissionLevels[Mathf.Clamp(currentIndex, 0, emissionLevels.Count - 1)]);
+    }
+
+    private void TriggerGameOver()
+    {
+        isGameOver = true;
+
+        if (gameOverCanvasPrefab != null)
+        {
+            gameOverInstance = Instantiate(gameOverCanvasPrefab);
+            DontDestroyOnLoad(gameOverInstance);
+        }
+    }
+
+    private void RestartFromFirstLevel()
+    {
+        isGameOver = false;
+        currentIndex = 0;
+
+        ApplyEmission();
+
+        if (gameOverInstance != null)
+        {
+            Destroy(gameOverInstance);
+            gameOverInstance = null;
+        }
+
+        SceneManager.LoadScene(firstLevelSceneName);
+    }
+
+    public bool IsGameOver()
+    {
+        return isGameOver;
     }
 }
