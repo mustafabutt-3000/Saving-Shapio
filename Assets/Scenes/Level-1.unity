@@ -825,6 +825,250 @@ MonoBehaviour:
   targetMaterial: {fileID: 2100000, guid: 8435bc02e4d0b8349878cdd3275b132a, type: 2}
   gameOverCanvasPrefab: {fileID: 3227144574321943405, guid: ab2a401e491a3fa438560c1c09125bdb, type: 3}
   firstLevelSceneName: Level-1
+--- !u!1 &768329847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768329848}
+  - component: {fileID: 768329849}
+  m_Layer: 0
+  m_Name: Crushed spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768329848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768329847}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 74.52948, y: 44.4528, z: -50.72087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768329849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768329847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c872b0f8d61ea95439d56994da393e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  crushList:
+  - originalObject: {fileID: 7299211372508333263, guid: 28c4734e164a3da48ae115ebf3fea555, type: 3}
+    crushedPrefab: {fileID: 3999432457790639598, guid: 69287af45a7f2744baa13ad3266f1bac, type: 3}
+  - originalObject: {fileID: 8243578922772349568, guid: 578f6b47130b0a04fa63e325aaa56d7a, type: 3}
+    crushedPrefab: {fileID: 3358544742784576072, guid: 288dc02373a49984daa0b4654ec7d378, type: 3}
+  - originalObject: {fileID: 9117057530190909864, guid: b1528e2ceeda7454186f574188fbffad, type: 3}
+    crushedPrefab: {fileID: 9099805356472774783, guid: 8f374eb8904038c4e970eed74845b5d8, type: 3}
+  - originalObject: {fileID: 6446832063311170576, guid: 40cff8cb39ec1ab4680ad2fed3f82634, type: 3}
+    crushedPrefab: {fileID: 43487664751961474, guid: 93300aef26fcf334889504cf9d9fa974, type: 3}
+  - originalObject: {fileID: 5663912291466970267, guid: 6119778046a594d49b82d464e00f53d3, type: 3}
+    crushedPrefab: {fileID: 1315435550504161083, guid: 3a379c079c7fb694aa14b4df792f78f5, type: 3}
+--- !u!1 &772528773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772528774}
+  - component: {fileID: 772528776}
+  - component: {fileID: 772528775}
+  m_Layer: 0
+  m_Name: Controls (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &772528774
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772528773}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0216}
+  m_LocalScale: {x: 0.00099435, y: 0.002193862, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8175163677945851107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0418, y: -0.009}
+  m_SizeDelta: {x: 50, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &772528775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772528773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "This is Shapio. A world where geometry is law. Where every shape has its
+    place, and the rules of this world hold everything together.\nBut the rules are
+    breaking.\nThings move that shouldn't. Things vanish that should stay. Forces
+    pull and push where they have no right to. The very logic of this world is being
+    rewritten.\nAnd look closely \u2014 do you notice? The circles are gone. The
+    spheres. The curves. Every soft edge, every rounded form... disappearing.\nThis
+    isn't decay. This is design.\nYou are a Cube. Small. Glowing. Searching for answers
+    in a world that's being unmade.\nSomething out there has a vision for Shapio.\nAnd
+    there's no room for you in it.\""
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -3.547491, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 772528776}
+  m_maskType: 0
+--- !u!23 &772528776
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772528773}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &800919098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillEffect
   cutCubePrefab: {fileID: 5204064098284406498, guid: a3f30c7c4aa5e0a4793c5ecf07e04eb7, type: 3}
-  CrushedCubePrefab: {fileID: 919132149155446097, guid: f3a2f058d5be7644e986fc5303e470d8, type: 3}
+  CrushedCubePrefab: {fileID: 1318444390556979410, guid: 1b12065bffb0add43bd4c2f09fa392ba, type: 3}
   separationForce: 10
   separationRadius: 2
   restartDelay: 1.5
@@ -2142,6 +2386,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8558098819877886722, guid: 56258cae353e0bd479e5bfed77b522ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 800919099}
+    - targetCorrespondingSourceObject: {fileID: 8558098819877886722, guid: 56258cae353e0bd479e5bfed77b522ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 772528774}
     - targetCorrespondingSourceObject: {fileID: 6897470051323603897, guid: 56258cae353e0bd479e5bfed77b522ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1579635850}
@@ -2186,3 +2433,4 @@ SceneRoots:
   - {fileID: 1121727154}
   - {fileID: 727970417}
   - {fileID: 32471138}
+  - {fileID: 768329848}
