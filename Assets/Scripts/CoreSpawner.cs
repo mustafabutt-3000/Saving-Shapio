@@ -16,14 +16,14 @@ public class CoreSpawner : MonoBehaviour
     public float coreLiveTime = 8f;
 
     [Header("Destruction Target")]
-    [Tooltip("This object is destroyed once the required number of cores are destroyed")]
+    [Tooltip("This object is destroyed/replaced once the required cores are destroyed")]
     public GameObject objectToDestroy;
+    [Tooltip("The 'crushed' version to spawn when the object is destroyed")]
+    public GameObject crushedObjectToDestroyPrefab;
     [Tooltip("How many cores need to be destroyed to destroy the object above")]
     public int coresRequiredToDestroy = 5;
 
-    // Static — survives scene reloads within the same play session, resets when game is closed
     private static int coresDestroyed = 0;
-
     private GameObject currentCore;
     private BossManager bossManager;
 
@@ -31,8 +31,8 @@ public class CoreSpawner : MonoBehaviour
     {
         bossManager = FindFirstObjectByType<BossManager>();
 
-        if (coresDestroyed >= coresRequiredToDestroy && objectToDestroy != null)
-            Destroy(objectToDestroy);
+        if (coresDestroyed >= coresRequiredToDestroy)
+            DestroyObjectToDestroy();
 
         StartCoroutine(SpawnLoop());
     }
@@ -71,11 +71,7 @@ public class CoreSpawner : MonoBehaviour
 
     private Transform GetRandomSpawnPoint()
     {
-        if (spawnPoints == null || spawnPoints.Count == 0)
-        {
-            Debug.LogWarning("[CoreSpawner] No spawn points assigned.");
-            return null;
-        }
+        if (spawnPoints == null || spawnPoints.Count == 0) return null;
         return spawnPoints[Random.Range(0, spawnPoints.Count)];
     }
 
@@ -84,14 +80,27 @@ public class CoreSpawner : MonoBehaviour
         currentCore = null;
         coresDestroyed++;
 
-        if (coresDestroyed >= coresRequiredToDestroy && objectToDestroy != null)
-            Destroy(objectToDestroy);
+        if (coresDestroyed >= coresRequiredToDestroy)
+            DestroyObjectToDestroy();
 
         if (bossManager != null)
             bossManager.RegisterCoreDestroyed();
     }
 
-    // Call this from PlayerHealth when a full game restart happens (game over → Level-1)
+    private void DestroyObjectToDestroy()
+    {
+        if (objectToDestroy != null)
+        {
+            // Spawn the crushed version at the object's last position/rotation
+            if (crushedObjectToDestroyPrefab != null)
+            {
+                Instantiate(crushedObjectToDestroyPrefab, objectToDestroy.transform.position, objectToDestroy.transform.rotation);
+            }
+
+            Destroy(objectToDestroy);
+        }
+    }
+
     public static void ResetCount()
     {
         coresDestroyed = 0;

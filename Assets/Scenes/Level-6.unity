@@ -5140,7 +5140,8 @@ MonoBehaviour:
   maxSpawnDelay: 5
   coreLiveTime: 25
   objectToDestroy: {fileID: 5303575150142634332}
-  coresRequiredToDestroy: 5
+  crushedObjectToDestroyPrefab: {fileID: 43487664751961474, guid: 93300aef26fcf334889504cf9d9fa974, type: 3}
+  coresRequiredToDestroy: 2
 --- !u!4 &2013501902
 Transform:
   m_ObjectHideFlags: 0

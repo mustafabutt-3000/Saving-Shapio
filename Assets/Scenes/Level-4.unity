@@ -3062,12 +3062,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6690a7d7b294da64080aedc28ffd3aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  repellers: []
-  attractors: []
-  repellerRange: 5
-  repellerForce: 15
-  attractorRange: 6
-  attractorForce: 12
+  repellers:
+  - target: {fileID: 4993342347696045317}
+    range: 5
+  - target: {fileID: 876261339}
+    range: 6
+  - target: {fileID: 9171052608806197741}
+    range: 9
+  - target: {fileID: 818042203407962379}
+    range: 5
+  - target: {fileID: 7134724231414151429}
+    range: 8
+  - target: {fileID: 5923414571162137539}
+    range: 10
+  - target: {fileID: 7774376760298092974}
+    range: 12
+  attractors:
+  - target: {fileID: 5737127092485738280}
+    range: 5
+  - target: {fileID: 6056452226555337585}
+    range: 5
+  - target: {fileID: 9030125838575745972}
+    range: 5
+  - target: {fileID: 3682319586376112683}
+    range: 5
+  - target: {fileID: 4968411261301475859}
+    range: 12
+  repellerForce: 150
+  attractorForce: 100
   repellersEnabled: 1
   attractorsEnabled: 1
   showRepellerRange: 1
@@ -3149,6 +3171,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9117057530190909864, guid: b1528e2ceeda7454186f574188fbffad, type: 3}
   m_PrefabInstance: {fileID: 3005282175560065491}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874344543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874344542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fad4653fd2a424189623a6b2f29e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyShape
+  crushedPrefab: {fileID: 9099805356472774783, guid: 8f374eb8904038c4e970eed74845b5d8, type: 3}
 --- !u!1 &1981277037
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5134,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9117057530190909864, guid: b1528e2ceeda7454186f574188fbffad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874344543}
   m_SourcePrefab: {fileID: 100100000, guid: b1528e2ceeda7454186f574188fbffad, type: 3}
 --- !u!23 &3053925048638607379
 MeshRenderer:
@@ -6202,11 +6240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095952989717577005, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8095952989717577005, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 8095952989717577005, guid: 54f5f259f24f30246b0da9a63dedd499, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7595,6 +7633,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 2733086}
   - {fileID: 1081883570}
+  - {fileID: 1629447112}
   - {fileID: 5900565695329252634}
   - {fileID: 1973466677441886338}
   - {fileID: 525348810}
@@ -7621,4 +7660,3 @@ SceneRoots:
   - {fileID: 507237921}
   - {fileID: 1619399182}
   - {fileID: 1618686020}
-  - {fileID: 1629447112}

@@ -4763,6 +4763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277268612626900957, guid: 28c4734e164a3da48ae115ebf3fea555, type: 3}
+      propertyPath: crushedPrefab
+      value: 
+      objectReference: {fileID: 3999432457790639598, guid: 69287af45a7f2744baa13ad3266f1bac, type: 3}
     - target: {fileID: 7299211372508333263, guid: 28c4734e164a3da48ae115ebf3fea555, type: 3}
       propertyPath: m_Name
       value: Rectangle
