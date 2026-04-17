@@ -29,9 +29,16 @@ public class KillCube : MonoBehaviour
         // Try to get the KillEffect component and call TriggerKill()
         if (target.TryGetComponent<KillEffect>(out var killEffect))
         {
-            Debug.Log($"[KillCube] Blade hit '{target.name}' — calling TriggerKill().");
-            if(gameObject.name.StartsWith("trap 1"))
+            if (gameObject.name.StartsWith("trap 1"))
+            {
+                Debug.Log($"[KillCube] Blade hit '{target.name}' — calling TriggerKill().");
                 killEffect.TriggerKill1Vertical();
+            }
+            if (gameObject.name.StartsWith("Projectile"))
+            {
+                Debug.Log($"[KillCube] Projectile hit '{target.name}' — calling TriggerCrush().");
+                killEffect.TriggerCrush();
+            }
             hasTriggered = true;
         }
         else

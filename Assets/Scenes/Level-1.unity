@@ -820,6 +820,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 094d6c1e1391230489800e5cff759d4d, type: 2}
   - {fileID: 2100000, guid: ecd9c036708053e48a4af9b1fec6980b, type: 2}
   - {fileID: 2100000, guid: 680c34b2913bdfd479f51c59f1adbfa5, type: 2}
+  - {fileID: 2100000, guid: ee8fd1f89d962b849889d11cdf841bbe, type: 2}
   - {fileID: 2100000, guid: beba672cf3a4f654d8c5dd3866f732e9, type: 2}
   targetMaterial: {fileID: 2100000, guid: 8435bc02e4d0b8349878cdd3275b132a, type: 2}
   gameOverCanvasPrefab: {fileID: 3227144574321943405, guid: ab2a401e491a3fa438560c1c09125bdb, type: 3}

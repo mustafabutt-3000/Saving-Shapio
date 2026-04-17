@@ -3,9 +3,9 @@ using UnityEngine;
 
 public enum ProjectileType
 {
-    Curveball,      
-    StopAndDrop,   
-    ZigZag          
+    Curveball,
+    StopAndDrop,
+    ZigZag
 }
 
 public class ProjectileController : MonoBehaviour
@@ -14,7 +14,6 @@ public class ProjectileController : MonoBehaviour
     [HideInInspector] public ProjectileType projectileType;
 
     public float speed = 6f;
-
     private Rigidbody rb;
 
     void Awake()
@@ -25,53 +24,44 @@ public class ProjectileController : MonoBehaviour
 
     void Start()
     {
+        // ... your existing switch statement ...
         switch (projectileType)
         {
-            case ProjectileType.Curveball:
-                StartCoroutine(DoCurveball());
-                break;
-            case ProjectileType.StopAndDrop:
-                StartCoroutine(DoStopAndDrop());
-                break;
-            case ProjectileType.ZigZag:
-                StartCoroutine(DoZigZag());
-                break;
+            case ProjectileType.Curveball: StartCoroutine(DoCurveball()); break;
+            case ProjectileType.StopAndDrop: StartCoroutine(DoStopAndDrop()); break;
+            case ProjectileType.ZigZag: StartCoroutine(DoZigZag()); break;
         }
+
+        // Add this line to trigger the auto-cleanup
+        StartCoroutine(AutoDestroyAfterTime(5f));
     }
 
+    IEnumerator AutoDestroyAfterTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
 
     IEnumerator DoCurveball()
     {
         float elapsed = 0f;
-        float duration = 2f;
+        float duration = 3f;
         Vector3 startPos = transform.position;
-
         Vector3 mid;
         int curveType = Random.Range(0, 3);
 
-        if (curveType == 0)
-        {
-            mid = (startPos + targetPosition) / 2f + Vector3.up * 4f;
-        }
-        else if (curveType == 1)
-        {
-            mid = (startPos + targetPosition) / 2f + Vector3.left * 4f;
-        }
-        else
-        {
-            mid = (startPos + targetPosition) / 2f + Vector3.right * 4f;
-        }
+        if (curveType == 0) mid = (startPos + targetPosition) / 2f + Vector3.up * 4f;
+        else if (curveType == 1) mid = (startPos + targetPosition) / 2f + Vector3.left * 4f;
+        else mid = (startPos + targetPosition) / 2f + Vector3.right * 4f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-            transform.position = Mathf.Pow(1 - t, 2) * startPos
-                                + 2 * (1 - t) * t * mid
-                                + Mathf.Pow(t, 2) * targetPosition;
+            transform.position = Mathf.Pow(1 - t, 2) * startPos + 2 * (1 - t) * t * mid + Mathf.Pow(t, 2) * targetPosition;
             yield return null;
         }
-        Destroy(gameObject);
+        // Removed Destroy(gameObject); - Projectile will just stay at target position
     }
 
     IEnumerator DoStopAndDrop()
@@ -92,10 +82,13 @@ public class ProjectileController : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(0.6f);
 
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        Vector3 actualPlayerPos = (playerObj != null) ? playerObj.transform.position : targetPosition;
+
         float dropDuration = 0.5f;
         elapsed = 0f;
         Vector3 dropStart = transform.position;
-        Vector3 dropTarget = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
+        Vector3 dropTarget = new Vector3(actualPlayerPos.x, actualPlayerPos.y, actualPlayerPos.z);
 
         while (elapsed < dropDuration)
         {
@@ -104,7 +97,7 @@ public class ProjectileController : MonoBehaviour
             transform.position = Vector3.Lerp(dropStart, dropTarget, t);
             yield return null;
         }
-        Destroy(gameObject);
+        // Removed Destroy(gameObject);
     }
 
     IEnumerator DoZigZag()
@@ -132,19 +125,12 @@ public class ProjectileController : MonoBehaviour
 
             yield return null;
         }
-        Destroy(gameObject);
+        rb.linearVelocity = Vector3.zero; // Stop moving instead of destroying
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
-            Destroy(gameObject);
-        }
-        else if (!collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
+        // Only destroy on collision
+        Destroy(gameObject);
     }
 }
